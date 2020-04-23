@@ -1,0 +1,20 @@
+name: flyplugin # Имя плагина
+main: ru.plugin.test.Main # Путь к главному классу (тому, который наследует JavaPlugin)
+author: Racoon1488PythonLubitNeBrosim # Автор плагина
+version: ${project.version} # Версия плагина
+description: super plugin # Описание плагина
+commands:
+  fly:
+    description: This is a demo command.
+    usage: /fly
+    permission: flyplugin.fly
+    permission-message: You don't have <permission>
+
+permissions:
+  flyplugin.*:
+    description: Gives access to all flyplugin commands
+    children:
+      flyplugin.fly: true
+  flyplugin.fly:
+    description: Allows you to toggle fly
+    default: op
